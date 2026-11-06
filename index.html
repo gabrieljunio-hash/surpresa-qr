@@ -54,6 +54,39 @@
 .preset-feedback{font-size:10px;color:#548064;margin-top:8px;min-height:14px}
 @media(max-width:520px){.template-art{height:105px}.template{padding:8px}.preset-chip{font-size:10px}}
 
+
+/* Prévia visual individual para cada ocasião */
+.template-art{height:142px;gap:4px}
+.template-art>span{font-size:8px}
+.template-art>strong{font-size:23px;line-height:1}
+.mini-preview{width:min(82%,190px);height:49px;border-radius:9px;background:#ffffffd9;display:flex;align-items:center;justify-content:center;gap:6px;padding:7px;box-shadow:0 4px 14px #24121a12;position:relative;overflow:hidden}
+.mini-preview i{display:block;height:5px;width:25%;border-radius:8px;background:#873d5850}
+.mini-preview i:nth-of-type(2){width:17%}
+.mini-preview b{font-size:19px;line-height:1;color:#873d58}
+.mini-love{background:linear-gradient(120deg,#fff,#ffe4ec)}
+.mini-love:before,.mini-love:after{content:"";width:21px;height:21px;border-radius:50%;background:#e9a8bb;opacity:.75}
+.mini-birthday{background:linear-gradient(120deg,#fff9e9,#f5dba8)}
+.mini-birthday b{font-size:25px}
+.mini-movie{background:linear-gradient(120deg,#242036,#54405e);color:white;flex-direction:column;gap:4px}
+.mini-movie b{color:white;font-size:9px;letter-spacing:.14em}
+.mini-movie i{background:#ffffff9c;width:48%;height:3px}
+.mini-playlist{background:linear-gradient(120deg,#eff9f2,#c5e1d1)}
+.mini-playlist b{font-size:24px;color:#477b60}
+.mini-playlist i{width:17%;height:5px;background:#6b9c7e}
+.mini-dating{background:linear-gradient(120deg,#fff,#f7dce5)}
+.mini-dating b{font-size:25px;color:#c45f80}
+.mini-wedding{background:linear-gradient(120deg,#fffaf0,#eadbb8)}
+.mini-wedding b{font-size:25px;color:#947847}
+.mini-declaration{background:linear-gradient(120deg,#fff,#e8def5)}
+.mini-declaration b{font-size:23px;color:#8064a4}
+.mini-invite{background:linear-gradient(120deg,#fff,#dce6fa)}
+.mini-invite b{font-size:21px;color:#6079b2}
+.field-presets{margin:-3px 0 12px;padding:9px 10px;border-radius:10px;background:#fff9fb;border:1px solid #f2e2e7}
+.field-presets>span{display:block;font-size:10px;color:var(--muted);margin-bottom:7px}
+.field-presets .preset-list{gap:6px}
+.field-presets .preset-chip{padding:6px 9px;font-size:10px}
+@media(max-width:520px){.template-art{height:128px}.mini-preview{height:43px}.field-presets{margin-bottom:10px}}
+
 </style>
 </head>
 <body>
@@ -69,14 +102,14 @@
   <section class="step-panel active" data-step="1">
     <div class="step-heading"><span>ETAPA 1 DE 4</span><h2 class="section-title">Escolha a ocasião</h2><p class="muted">Veja o estilo de cada ocasião nos exemplos abaixo. Toque em um modelo para selecioná-lo; você poderá personalizar depois.</p></div>
     <div class="templates" id="templates">
-      <button class="template active" data-type="love"><div class="template-art art-love"><span>NOSSA HISTÓRIA</span><strong>💗</strong><i></i><i></i></div><b>Nossa história</b><small>Do primeiro dia até hoje</small></button>
-      <button class="template" data-type="birthday"><div class="template-art art-birthday"><span>SEU DIA ESPECIAL</span><strong>🎂</strong><i></i><i></i></div><b>Aniversário</b><small>Uma festa feita para você</small></button>
-      <button class="template" data-type="movie"><div class="template-art art-movie"><span>EM CARTAZ</span><strong>🎬</strong><i></i><i></i></div><b>Poster de filme</b><small>O filme da nossa vida</small></button>
-      <button class="template" data-type="playlist"><div class="template-art art-playlist"><span>FAIXAS ESPECIAIS</span><strong>🎧</strong><i></i><i></i></div><b>Playlist</b><small>Trilha sonora de vocês</small></button>
-      <button class="template" data-type="dating"><div class="template-art art-dating"><span>UMA PERGUNTA</span><strong>💌</strong><i></i><i></i></div><b>Pedido de namoro</b><small>Uma surpresa para responder</small></button>
-      <button class="template" data-type="wedding"><div class="template-art art-wedding"><span>PARA SEMPRE</span><strong>💍</strong><i></i><i></i></div><b>Pedido de casamento</b><small>Um pedido inesquecível</small></button>
-      <button class="template" data-type="declaration"><div class="template-art art-declaration"><span>CARTA ABERTA</span><strong>❤️</strong><i></i><i></i></div><b>Declaração</b><small>Palavras que vêm do coração</small></button>
-      <button class="template" data-type="invite"><div class="template-art art-invite"><span>RESERVE A DATA</span><strong>💐</strong><i></i><i></i></div><b>Convite digital</b><small>Um convite com todos os detalhes</small></button>
+      <button class="template active" data-type="love"><div class="template-art art-love"><span>NOSSA HISTÓRIA</span><strong>💗</strong><div class="mini-preview mini-love"><i></i><i></i><b>♥</b></div><i></i><i></i></div><b>Nossa história</b><small>Do primeiro dia até hoje</small></button>
+      <button class="template" data-type="birthday"><div class="template-art art-birthday"><span>SEU DIA ESPECIAL</span><strong>🎂</strong><div class="mini-preview mini-birthday"><i></i><i></i><b>🎂</b></div><i></i><i></i></div><b>Aniversário</b><small>Uma festa feita para você</small></button>
+      <button class="template" data-type="movie"><div class="template-art art-movie"><span>EM CARTAZ</span><strong>🎬</strong><div class="mini-preview mini-movie"><b>EM CARTAZ</b><i></i><i></i></div><i></i><i></i></div><b>Poster de filme</b><small>O filme da nossa vida</small></button>
+      <button class="template" data-type="playlist"><div class="template-art art-playlist"><span>FAIXAS ESPECIAIS</span><strong>🎧</strong><div class="mini-preview mini-playlist"><b>♫</b><i></i><i></i><i></i></div><i></i><i></i></div><b>Playlist</b><small>Trilha sonora de vocês</small></button>
+      <button class="template" data-type="dating"><div class="template-art art-dating"><span>UMA PERGUNTA</span><strong>💌</strong><div class="mini-preview mini-dating"><b>♡</b><i></i><i></i></div><i></i><i></i></div><b>Pedido de namoro</b><small>Uma surpresa para responder</small></button>
+      <button class="template" data-type="wedding"><div class="template-art art-wedding"><span>PARA SEMPRE</span><strong>💍</strong><div class="mini-preview mini-wedding"><b>∞</b><i></i><i></i></div><i></i><i></i></div><b>Pedido de casamento</b><small>Um pedido inesquecível</small></button>
+      <button class="template" data-type="declaration"><div class="template-art art-declaration"><span>CARTA ABERTA</span><strong>❤️</strong><div class="mini-preview mini-declaration"><b>✉</b><i></i><i></i></div><i></i><i></i></div><b>Declaração</b><small>Palavras que vêm do coração</small></button>
+      <button class="template" data-type="invite"><div class="template-art art-invite"><span>RESERVE A DATA</span><strong>💐</strong><div class="mini-preview mini-invite"><b>📅</b><i></i><i></i></div><i></i><i></i></div><b>Convite digital</b><small>Um convite com todos os detalhes</small></button>
     </div>
     <div class="wizard-actions"><span></span><button class="btn" type="button" data-next>Continuar <span aria-hidden="true">→</span></button></div>
   </section>
@@ -87,19 +120,19 @@
       <div class="field"><label for="to">Quem vai receber</label><input id="to" maxlength="50" placeholder="Nome da pessoa"></div>
       <div class="field"><label for="from">Quem está enviando</label><input id="from" maxlength="50" placeholder="Seu nome"></div>
     </div>
-    <div class="field"><label for="title">Título</label><input id="title" maxlength="70" placeholder="Nossa história"></div>
+    <div class="field"><label for="title">Título</label><input id="title" maxlength="70" placeholder="Nossa história"></div><div class="field-presets" data-field-presets="title"><span>Ideias rápidas — toque para preencher</span><div class="preset-list"></div></div>
     <div class="grid" id="dateRow">
       <div class="field" id="dateField"><label for="date">Data especial</label><input id="date" type="date"></div>
       <div class="field hidden" id="eventTimeField"><label for="eventTime">Horário</label><input id="eventTime" type="time"></div>
     </div>
     <div class="field hidden" id="placeField"><label for="place">Local do evento</label><input id="place" maxlength="120" placeholder="Endereço ou local"></div>
-    <div class="field"><label for="message">Mensagem principal</label><textarea id="message" maxlength="1800" placeholder="Escreva o que você gostaria de dizer..."></textarea><small class="field-help">Até 1.800 caracteres.</small></div>
+    <div class="field"><label for="message">Mensagem principal</label><textarea id="message" maxlength="1800" placeholder="Escreva o que você gostaria de dizer..."></textarea><small class="field-help">Até 1.800 caracteres.</small></div><div class="field-presets" data-field-presets="message"><span>Ideias rápidas — toque para preencher</span><div class="preset-list"></div></div>
     <div class="preset-area" id="presetArea"><strong>Quer uma ajudinha para começar?</strong><p>Escolha uma ideia pronta. Você pode editar tudo depois.</p><div class="preset-list" id="presetList"></div><div class="preset-feedback" id="presetFeedback" aria-live="polite"></div></div>
-    <div class="field hidden" id="synopsisField"><label for="synopsis">Sinopse do filme</label><textarea id="synopsis" maxlength="500" placeholder="Uma história que começou..."></textarea></div>
-    <div class="field hidden" id="timelineField"><label for="timeline">Linha do tempo</label><textarea id="timeline" maxlength="900" placeholder="12/03/2024 | Nosso primeiro encontro&#10;20/04/2024 | A primeira viagem"></textarea><small class="field-help">Uma lembrança por linha, separando data e acontecimento com |.</small></div>
-    <div class="field hidden" id="tracksField"><label for="tracks">Músicas da playlist</label><textarea id="tracks" maxlength="1200" placeholder="Nossa música | https://site.com/musica.mp3"></textarea><small class="field-help">Uma música por linha: título | link direto do áudio.</small></div>
-    <div class="field hidden" id="questionField"><label for="question">Pergunta do pedido</label><input id="question" maxlength="120" placeholder="Aceita namorar comigo?"></div>
-    <div class="field hidden" id="surpriseField"><label for="surpriseText">Mensagem surpresa (opcional)</label><textarea id="surpriseText" maxlength="700" placeholder="Mais uma coisa que quero te contar..."></textarea></div>
+    <div class="field hidden" id="synopsisField"><label for="synopsis">Sinopse do filme</label><textarea id="synopsis" maxlength="500" placeholder="Uma história que começou..."></textarea></div><div class="field-presets" data-field-presets="synopsis"><span>Ideias rápidas — toque para preencher</span><div class="preset-list"></div></div>
+    <div class="field hidden" id="timelineField"><label for="timeline">Linha do tempo</label><textarea id="timeline" maxlength="900" placeholder="12/03/2024 | Nosso primeiro encontro&#10;20/04/2024 | A primeira viagem"></textarea><small class="field-help">Uma lembrança por linha, separando data e acontecimento com |.</small></div><div class="field-presets" data-field-presets="timeline"><span>Ideias rápidas — toque para preencher</span><div class="preset-list"></div></div>
+    <div class="field hidden" id="tracksField"><label for="tracks">Músicas da playlist</label><textarea id="tracks" maxlength="1200" placeholder="Nossa música | https://site.com/musica.mp3"></textarea><small class="field-help">Uma música por linha: título | link direto do áudio.</small></div><div class="field-presets" data-field-presets="tracks"><span>Ideias rápidas — toque para preencher</span><div class="preset-list"></div></div>
+    <div class="field hidden" id="questionField"><label for="question">Pergunta do pedido</label><input id="question" maxlength="120" placeholder="Aceita namorar comigo?"></div><div class="field-presets" data-field-presets="question"><span>Ideias rápidas — toque para preencher</span><div class="preset-list"></div></div>
+    <div class="field hidden" id="surpriseField"><label for="surpriseText">Mensagem surpresa (opcional)</label><textarea id="surpriseText" maxlength="700" placeholder="Mais uma coisa que quero te contar..."></textarea></div><div class="field-presets" data-field-presets="surpriseText"><span>Ideias rápidas — toque para preencher</span><div class="preset-list"></div></div>
     <div class="wizard-actions"><button class="btn alt" type="button" data-back>← Voltar</button><button class="btn" type="button" data-next>Continuar →</button></div>
   </section>
 
@@ -205,6 +238,35 @@ invite:[
 ]
 };
 function renderPresets(){
+const fieldPresetData={
+love:{title:['Nossa história, nosso lugar','Desde o primeiro encontro','Ainda escolheria você'],message:['Você transforma os dias comuns em lembranças especiais. Quero continuar construindo nossa história, um momento de cada vez.','Entre tantos caminhos, sou feliz por dividir o meu com você. Que venham novas histórias, viagens e motivos para sorrir.'],timeline:['DD/MM/AAAA | Nosso primeiro encontro\\nDD/MM/AAAA | Uma lembrança que guardamos\\nDD/MM/AAAA | Hoje, construindo novos capítulos','DD/MM/AAAA | O dia em que tudo começou\\nDD/MM/AAAA | Nossa primeira aventura\\nDD/MM/AAAA | Um momento inesquecível']},
+birthday:{title:['Hoje é dia de celebrar você!','Um novo ciclo, muitos sonhos','Você merece o mundo'],message:['Que seu novo ano venha com saúde, paz, conquistas e pessoas que façam bem ao seu coração. Feliz aniversário!','Hoje é dia de celebrar a pessoa incrível que você é. Que nunca faltem motivos para sorrir e sonhos para realizar.'],surpriseText:['Meu presente é lembrar o quanto você é importante. Que seu dia seja tão especial quanto você!','Guarde esse desejo: que a vida surpreenda você sempre com coisas boas.']},
+movie:{title:['O melhor capítulo ainda está por vir','Uma história digna de cinema','Nosso amor em cena'],synopsis:['Em meio a encontros inesperados, risadas e pequenos gestos, duas pessoas descobrem que a melhor aventura é viver essa história lado a lado.','Uma história feita de momentos reais, cenas engraçadas e lembranças que merecem ser reprisadas. E o melhor: ainda não chegou ao fim.']},
+playlist:{title:['A trilha sonora da nossa história','Dá o play e lembra de mim','Canções que contam sobre nós'],message:['Cada faixa marca um momento, uma conversa ou uma lembrança. Reuni essas músicas para que você possa reviver um pouquinho da nossa história.','Algumas músicas têm o poder de trazer alguém para perto, mesmo quando está longe. Essas aqui me fazem pensar em você.'],tracks:['Nossa música | COLE_AQUI_O_LINK_DIRETO\\nAquela que lembra você | COLE_AQUI_O_LINK_DIRETO','Música do primeiro encontro | COLE_AQUI_O_LINK_DIRETO\\nNossa favorita | COLE_AQUI_O_LINK_DIRETO']},
+dating:{title:['Tenho uma pergunta importante','Vamos dar nome a esse sentimento?','Nosso próximo capítulo'],question:['Você aceita namorar comigo?','Quer construir uma história comigo?','Topa ser meu par nessa aventura?'],message:['Gosto de cada conversa, de cada sorriso e da forma como tudo fica melhor quando estamos juntos. Quero descobrir o que podemos construir daqui pra frente.','Não preciso de uma história perfeita. Quero uma história sincera, com carinho, respeito e vontade de fazer dar certo.']},
+wedding:{title:['Quero viver o para sempre com você','Meu melhor futuro é ao seu lado','Uma pergunta para a vida toda'],question:['Quer se casar comigo?','Vamos construir nosso para sempre?','Aceita continuar escolhendo a vida ao meu lado?'],message:['Quero dividir os planos, os dias simples, as conquistas e os desafios. Mais do que uma promessa, quero continuar escolhendo você todos os dias.','Se existe algo que desejo para o futuro, é continuar caminhando ao seu lado. Quer dar esse próximo passo comigo?']},
+declaration:{title:['Tem coisas que o coração precisa dizer','Você faz meus dias melhores','Um carinho em forma de palavras'],message:['Admiro seu jeito, sua força e a forma única como você enxerga o mundo. Talvez eu não diga sempre, mas sua presença faz muita diferença para mim.','Quero que você saiba que é lembrado(a) com carinho nos pequenos momentos do dia. Sua presença deixa tudo um pouco mais bonito.'],surpriseText:['Se estas palavras conseguirem arrancar um sorriso, meu objetivo já foi alcançado.']},
+invite:{title:['Guarde esta data especial','Você é nosso convidado!','Um encontro para guardar na memória'],message:['Preparei esse momento com carinho e quero muito dividir essa alegria com você. Confira os detalhes e venha celebrar comigo!','Sua presença vai deixar esse dia ainda mais especial. Reserve a data e venha viver esse momento com a gente.']}
+};
+function renderFieldPresets(){
+ document.querySelectorAll('[data-field-presets]').forEach(box=>{
+  const key=box.dataset.fieldPresets,items=(fieldPresetData[type]||{})[key]||[];
+  const list=box.querySelector('.preset-list');list.replaceChildren();
+  box.classList.toggle('hidden',!items.length);
+  items.forEach((value,index)=>{
+   const b=el('button','preset-chip',key==='timeline'?'Exemplo '+(index+1):key==='tracks'?'Lista '+(index+1):'Sugestão '+(index+1));
+   b.type='button';b.onclick=()=>{
+    const target=$(key);if(!target)return;
+    target.value=value.replace(/\\n/g,'\\n');
+    target.dispatchEvent(new Event('input',{bubbles:true}));
+    const guide=box.querySelector('span');const old=guide.textContent;guide.textContent='Sugestão aplicada — você pode editar o texto.';
+    window.setTimeout(()=>{if(guide.isConnected)guide.textContent=old;},2200);
+   };list.append(b);
+  });
+ });
+}
+
+function renderPresets(){
  const area=$('presetArea'),list=$('presetList');if(!area||!list)return;
  const presets=contentPresets[type]||[];list.replaceChildren();$('presetFeedback').textContent='';
  presets.forEach((preset,index)=>{const b=el('button','preset-chip',preset.label);b.type='button';b.onclick=()=>{
@@ -216,7 +278,7 @@ function renderPresets(){
   $('presetFeedback').textContent='Sugestão aplicada. Edite os campos para deixar com a sua cara.';
   preview();
  };list.append(b);});
- area.classList.toggle('hidden',presets.length===0);
+ area.classList.toggle('hidden',presets.length===0);renderFieldPresets();
 }
 
 function updateFields(){Object.keys(fields).forEach(id=>$(id).classList.toggle('hidden',!fields[id].includes(type)));$('dateRow').classList.toggle('hidden',type==='movie'||type==='birthday'||type==='playlist'||type==='declaration');$('title').placeholder=labels[type];$('question').placeholder=type==='wedding'?'Quer se casar comigo?':'Aceita namorar comigo?';const guides={love:'Conte como a história começou. A data ativa o contador e a linha do tempo guarda momentos marcantes.',birthday:'Prepare uma mensagem de aniversário. Na página final, a pessoa poderá apagar as velinhas e ver os confetes.',movie:'Crie o título e a sinopse do filme de vocês. O presente ganha um visual de cartaz de cinema.',playlist:'Monte uma trilha sonora com músicas que tenham significado. Cada faixa pode ter seu próprio link de áudio.',dating:'Escreva a pergunta do pedido e prepare a surpresa para a resposta.',wedding:'Prepare o pedido de casamento com uma pergunta especial e uma apresentação elegante.',declaration:'Escreva uma carta do seu jeito. O modelo destaca a mensagem como protagonista.',invite:'Informe data, horário e local para criar um convite pronto para compartilhar.'};$('contentGuide').textContent=guides[type]||'Preencha os campos para montar seu presente.';renderPresets();}
