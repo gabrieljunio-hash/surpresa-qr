@@ -21,6 +21,28 @@
 .demo-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.demo-modal-head b{display:block;color:var(--deep);font:20px Georgia,serif}.demo-modal-head small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.demo-modal-head button{border:0;border-radius:50%;width:36px;height:36px;background:var(--soft);font-size:23px;color:var(--deep)}
 .demo-stage{padding:12px 8px;border-radius:15px;background:linear-gradient(145deg,#fff0f4,#f3e4e9);display:flex;justify-content:center}.demo-stage .gift-card{max-width:410px;min-height:390px}
 .demo-use{display:block;width:100%;margin-top:12px}
+
+/* Identidade visual própria para cada ocasião */
+.type-love{background-image:radial-gradient(circle at 8% 8%,#fce4eb 0 5%,transparent 5.5%),radial-gradient(circle at 92% 88%,#fce4eb 0 6%,transparent 6.5%)}
+.type-love .type-ornament{color:#d87893;letter-spacing:.45em}
+.type-birthday{background-image:radial-gradient(circle at 10% 12%,#f7dfaa 0 4px,transparent 5px),radial-gradient(circle at 90% 18%,#eab7a4 0 4px,transparent 5px),radial-gradient(circle at 84% 90%,#f1d48d 0 5px,transparent 6px)}
+.type-birthday .type-ornament{color:#bd8740;font-size:24px;letter-spacing:.3em}
+.type-movie{background-image:linear-gradient(90deg,transparent 49%,#ffffff0c 50%,transparent 51%);border:1px solid #8e7898}
+.type-movie .type-ornament{color:#e7c78a;letter-spacing:.55em}
+.type-playlist{background-image:radial-gradient(circle at 50% 0%,#e2f0e7 0 28%,transparent 29%)}
+.type-playlist .type-ornament{color:#5d9272;font-size:27px}
+.type-dating{border:1px solid #edc3d0;background-image:radial-gradient(circle at 50% 0%,#fff0f4 0 32%,transparent 33%)}
+.type-dating .type-ornament{color:#c65e80;font-size:29px}
+.type-wedding{border:4px double #d6bd87;background-image:radial-gradient(circle at 50% 0%,#fbf2dc 0 30%,transparent 31%)}
+.type-wedding .type-ornament{color:#a88a4e;font-size:29px}
+.type-wedding .btn{background:#947747}
+.type-declaration{border-left:5px solid #b49acb;background-image:linear-gradient(90deg,#f8f3ff,#fffdfb 24%)}
+.type-declaration .type-ornament{color:#947cb4;font-size:25px}
+.type-declaration .message{text-align:left;padding:0 5px}
+.type-invite{border:3px double #b49a78;background-image:linear-gradient(145deg,#fffaf0,#fffdf8 50%,#f7f0e5)}
+.type-invite .type-ornament{color:#a58b65;font-size:25px;letter-spacing:.5em}
+.type-ornament{font-size:20px;line-height:1.3;margin:4px 0 2px}
+.device-preview .type-ornament{font-size:17px}
 .font-elegant{font-family:Georgia,serif}.font-clean{font-family:system-ui,sans-serif}.font-hand{font-family:"Brush Script MT","Segoe Script",cursive}.anim-soft{animation:appear .8s ease both}.anim-float{animation:float 3s ease-in-out infinite}.anim-none{animation:none!important}@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:0}}@media(max-width:800px){.layout{grid-template-columns:1fr}.preview-panel{position:static;grid-row:1}.preview{min-height:310px}.preview .gift-card{max-width:440px}.viewer .photos img{height:140px}}@media(max-width:520px){.grid{grid-template-columns:1fr}.templates{grid-template-columns:1fr 1fr}.template{padding:9px}.template small{font-size:10px}.actions .btn{min-width:100%}.preview{padding:8px;min-height:280px}.gift-card{padding:19px 13px}}
 
 .stepper{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 18px;max-width:650px;padding:0 5px}
@@ -314,7 +336,7 @@ function showGalleryImage(){if(!galleryItems.length)return;$('lightboxImage').sr
 function closeGallery(){$('lightbox').classList.remove('open');document.body.style.overflow='';}
 $('lightboxClose').onclick=closeGallery;$('lightboxPrev').onclick=()=>{galleryIndex=(galleryIndex-1+galleryItems.length)%galleryItems.length;showGalleryImage();};$('lightboxNext').onclick=()=>{galleryIndex=(galleryIndex+1)%galleryItems.length;showGalleryImage();};$('lightbox').addEventListener('click',e=>{if(e.target===$('lightbox'))closeGallery();});document.addEventListener('keydown',e=>{if(!$('lightbox').classList.contains('open'))return;if(e.key==='Escape')closeGallery();if(e.key==='ArrowLeft')$('lightboxPrev').click();if(e.key==='ArrowRight')$('lightboxNext').click();});
 function addPhotos(card,d){const list=photoList(d);if(!list.length)return;const box=el('div','photos');list.forEach((src,index)=>{const im=el('img');im.src=src;im.alt='Abrir foto '+(index+1)+' da galeria';im.loading='lazy';im.tabIndex=0;im.onclick=()=>openGallery(list,index);im.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGallery(list,index);}};im.onerror=()=>im.remove();box.append(im)});card.append(box);}
-function makeCard(d,live){const p=palettes[d.color]||palettes.rose;const card=el('article','gift-card font-'+(d.font||'elegant')+' anim-'+(d.animation||'soft'));card.style.setProperty('--accent',p[0]);card.style.setProperty('--deep',p[1]);card.style.setProperty('--soft',p[2]);card.style.background=p[3];if(d.type==='movie')card.classList.add('poster');const eyebrow=el('div','eyebrow',d.to?'Uma surpresa para '+d.to:'Um presente especial');card.append(eyebrow);const title=el('h2','gift-title',d.title||labels[d.type]||'Um presente especial');card.append(title);
+function makeCard(d,live){const p=palettes[d.color]||palettes.rose;const card=el('article','gift-card type-'+(d.type||'love')+' font-'+(d.font||'elegant')+' anim-'+(d.animation||'soft'));card.style.setProperty('--accent',p[0]);card.style.setProperty('--deep',p[1]);card.style.setProperty('--soft',p[2]);card.style.background=p[3];if(d.type==='movie')card.classList.add('poster');const eyebrow=el('div','eyebrow',d.to?'Uma surpresa para '+d.to:'Um presente especial');const ornaments={love:'♥  ♥  ♥',birthday:'✦  ✧  ✦',movie:'✦  •  ✦',playlist:'♫',dating:'♡',wedding:'❦',declaration:'❦',invite:'✧  ✦  ✧'};card.append(eyebrow,el('div','type-ornament',ornaments[d.type]||'♥'));const title=el('h2','gift-title',d.title||labels[d.type]||'Um presente especial');card.append(title);
 if(d.type==='birthday'){card.append(el('div','candle','🎂 🕯️ 🕯️ 🕯️'));const b=el('button','btn alt','Apagar as velinhas ✨');b.onclick=()=>{b.textContent='✨ Desejo realizado!';confetti();};card.append(b);}
 if(d.type==='love'&&d.date){const c=counter(d.date);if(c){const box=el('div','counter');c.forEach(x=>{const a=el('div');a.append(el('strong','',String(x[1])),el('small','',x[0]));box.append(a)});card.append(box)}}
 if(d.type==='movie'&&d.synopsis)card.append(el('p','message',d.synopsis));
@@ -322,7 +344,7 @@ if(d.type==='invite'){const info=el('div','invite-info');if(d.date)info.append(e
 addPhotos(card,d);
 if(d.type==='love'&&d.timeline){const tl=el('div','timeline');d.timeline.split('\n').filter(Boolean).forEach(line=>{const parts=line.split('|');const item=el('div','timeline-item');item.append(el('b','',parts[0].trim()),el('p','',parts.slice(1).join('|').trim()));tl.append(item)});card.append(tl);}
 if(d.type==='playlist'){const tracks=String(d.tracks||'').split('\n').filter(Boolean);tracks.forEach((line,i)=>{const parts=line.split('|');const row=el('div','track');const thumb=el('div','','🎵');thumb.style.cssText='width:48px;height:48px;border-radius:8px;background:var(--soft);display:grid;place-items:center;font-size:23px';const info=el('div');info.append(el('b','',parts[0].trim()||'Faixa '+(i+1)),el('small','','Uma lembrança especial'));const play=el('button','', '▶');play.setAttribute('aria-label','Tocar faixa');play.onclick=()=>{const src=(parts[1]||'').trim();if(!/^https?:\/\//i.test(src)){alert('Adicione um link direto de áudio nesta faixa.');return;}let a=card.querySelector('audio');if(!a){const w=el('div','media-player');a=el('audio');a.controls=true;w.append(a);card.append(w)}if(a.src!==src){a.src=src;}a.play().catch(()=>alert('Não foi possível tocar este arquivo de áudio.'));};row.append(thumb,info,play);card.append(row)});}
-if(d.type==='dating'||d.type==='wedding'){card.append(el('p','message',d.question|| (d.type==='wedding'?'Quer se casar comigo?':'Aceita namorar comigo?')));const yes=el('button','btn','SIM! 💗');yes.onclick=()=>{yes.textContent='Eu sabia! ❤️';confetti()};card.append(yes);}
+if(d.type==='dating'||d.type==='wedding'){card.append(el('p','message',d.question|| (d.type==='wedding'?'Quer se casar comigo?':'Aceita namorar comigo?')));const yes=el('button','btn',d.type==='wedding'?'SIM, EU ACEITO! 💍':'SIM! 💗');yes.onclick=()=>{yes.textContent='Eu sabia! ❤️';confetti()};card.append(yes);}
 if(d.type==='declaration')card.append(el('div','eyebrow','Com todo meu carinho'));
 if(d.message)card.append(el('p','message',d.message));
 if(d.type==='birthday'&&d.from)card.append(el('p','muted','Com carinho, '+d.from));
