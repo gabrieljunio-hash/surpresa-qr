@@ -9,60 +9,101 @@
 <style>
 :root{--accent:#df718b;--deep:#873d58;--soft:#fff0f4;--paper:#fffdfb;--ink:#33272c;--muted:#88767d;--line:#f0dce2}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fffaf6,#fff0f4);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{width:min(100% - 28px,1180px);margin:auto;padding:24px 0 55px}.brand{text-align:center;margin:8px 0 24px}.brand .ico{font-size:34px}.brand h1{font:500 clamp(30px,6vw,46px) Georgia,serif;color:var(--deep);margin:5px}.brand p{color:var(--muted);margin:8px}.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.82fr);gap:18px;align-items:start}.panel{background:#ffffffeb;border:1px solid var(--line);border-radius:22px;padding:clamp(16px,3vw,25px);box-shadow:0 16px 48px #813b5510}.section-title{font:500 24px Georgia,serif;color:var(--deep);margin:0 0 6px}.muted,.hint{color:var(--muted);font-size:12px;line-height:1.55}.templates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0 20px}.template{border:1px solid var(--line);border-radius:14px;background:white;padding:12px;text-align:left;color:var(--ink);min-height:88px}.template.active{border:2px solid var(--accent);background:var(--soft);padding:11px}.template .emoji{font-size:22px}.template b{display:block;margin:4px 0;color:var(--deep);font-size:13px}.template small{font-size:11px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{margin:11px 0}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #e8d5db;border-radius:11px;background:#fff;outline:none;color:var(--ink)}.field textarea{min-height:84px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px #df718b20}.field input[type=file]{padding:8px;font-size:12px}.btn{border:0;border-radius:12px;padding:12px 16px;background:var(--accent);color:white;font-weight:750}.btn.alt{background:#f7e8ed;color:var(--deep)}.btn.dark{background:var(--deep)}.btn:disabled{opacity:.5}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.actions .btn{flex:1}.hidden{display:none!important}.preview-panel{position:sticky;top:12px}.preview-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.preview-top span{font-size:11px;color:var(--muted)}.preview{min-height:390px;border-radius:18px;padding:15px;background:linear-gradient(145deg,#fff7f8,#fce9ef);display:flex;align-items:center;justify-content:center;overflow:hidden}.gift-card{width:100%;max-width:470px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px 18px;box-shadow:0 14px 40px #67304712;overflow:hidden}.eyebrow{text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-size:10px}.gift-title{font:500 clamp(27px,4vw,38px) Georgia,serif;color:var(--deep);margin:11px 0}.message{white-space:pre-wrap;line-height:1.7;font:17px Georgia,serif}.counter{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:15px 0}.counter div{background:var(--soft);border-radius:10px;padding:9px;min-width:57px}.counter strong{display:block;font-size:20px;color:var(--deep)}.counter small{font-size:9px;color:var(--muted)}.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin:15px 0}.photos img{width:100%;height:130px;object-fit:cover;border-radius:10px}.timeline{text-align:left;margin:14px 0;padding-left:14px;border-left:2px solid var(--accent)}.timeline-item{margin:10px 0}.timeline-item b{color:var(--deep);font-size:12px}.timeline-item p{margin:3px 0;font-size:12px}.poster{background:linear-gradient(155deg,#242036,#76506e);color:#fff;border:0}.poster .gift-title,.poster .eyebrow{color:#fff}.poster .message{font-family:Georgia,serif}.track{display:flex;align-items:center;gap:10px;text-align:left;background:var(--soft);border-radius:11px;padding:8px;margin:7px 0}.track img{width:48px;height:48px;object-fit:cover;border-radius:8px}.track b{display:block;font-size:12px}.track small{color:var(--muted);font-size:10px}.track button{margin-left:auto;border:0;border-radius:50%;width:34px;height:34px;background:var(--accent);color:#fff}.media-player{width:100%;margin:12px 0}.media-player audio,.media-player video{width:100%;max-height:230px;border-radius:10px}.surprise{margin-top:15px}.surprise-content{display:none;background:var(--soft);border-radius:12px;padding:13px;margin-top:10px;white-space:pre-wrap;font:16px Georgia,serif}.surprise-content.show{display:block;animation:appear .6s ease}.candle{font-size:35px;margin:12px}.confetti{position:fixed;top:-15px;width:9px;height:14px;z-index:5;animation:fall 2.8s linear forwards;pointer-events:none}.footer{text-align:center;color:#a48e95;font-size:11px;margin-top:20px}.result{display:none;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);text-align:center}.result.show{display:block}.qr{display:inline-block;background:white;padding:10px;border:1px solid var(--line);border-radius:13px;margin:8px}.link{overflow-wrap:anywhere;background:#fff5f7;padding:10px;border-radius:9px;font-size:11px}.notice{background:#fff8e9;border:1px solid #f0dfb9;border-radius:10px;padding:10px;font-size:11px;color:#725a2d;line-height:1.5}.viewer{display:none;min-height:100vh;padding:25px 14px;align-items:center;justify-content:center}.viewer.active{display:flex}.viewer .gift-card{max-width:650px;padding:clamp(22px,5vw,42px)}.viewer .photos img{height:190px}.viewer .message{font-size:18px}.invite-info{background:var(--soft);border-radius:12px;padding:12px;margin:14px 0}.poster .invite-info{background:#ffffff20}.font-elegant{font-family:Georgia,serif}.font-clean{font-family:system-ui,sans-serif}.font-hand{font-family:"Brush Script MT","Segoe Script",cursive}.anim-soft{animation:appear .8s ease both}.anim-float{animation:float 3s ease-in-out infinite}.anim-none{animation:none!important}@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:0}}@media(max-width:800px){.layout{grid-template-columns:1fr}.preview-panel{position:static;grid-row:1}.preview{min-height:310px}.preview .gift-card{max-width:440px}.viewer .photos img{height:140px}}@media(max-width:520px){.grid{grid-template-columns:1fr}.templates{grid-template-columns:1fr 1fr}.template{padding:9px}.template small{font-size:10px}.actions .btn{min-width:100%}.preview{padding:8px;min-height:280px}.gift-card{padding:19px 13px}}
+
+.stepper{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 18px;max-width:650px;padding:0 5px}
+.stepper>i{height:1px;background:var(--line);flex:1;max-width:90px}
+.step-dot{display:flex;align-items:center;gap:7px;color:#aa969d;font-size:11px;white-space:nowrap}
+.step-dot b{display:grid;place-items:center;width:29px;height:29px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:12px}
+.step-dot.active{color:var(--deep);font-weight:750}.step-dot.active b,.step-dot.done b{background:var(--accent);border-color:var(--accent);color:white}
+.step-dot.done{color:var(--deep)}
+.wizard-panel{max-width:820px;margin:0 auto;min-height:440px}
+.step-panel{display:none}.step-panel.active{display:block;animation:appear .25s ease}
+.step-heading{margin-bottom:18px}.step-heading>span{font-size:10px;letter-spacing:.12em;color:var(--accent);font-weight:800}
+.step-heading .section-title{margin:5px 0}
+.subheading{font-size:13px;color:var(--deep);border-bottom:1px solid var(--line);padding-bottom:8px;margin:20px 0 8px}
+.field-help{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+.wizard-actions{display:flex;justify-content:space-between;gap:10px;margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
+.wizard-actions .btn{min-width:125px}
+#stepper{user-select:none}
+@media(max-width:520px){.stepper{gap:5px}.step-dot{gap:4px;font-size:9px}.step-dot b{width:25px;height:25px}.stepper>i{max-width:30px}.wizard-panel{min-height:0}.wizard-actions .btn{min-width:0;flex:1}.step-heading{margin-bottom:14px}}
 </style>
 </head>
 <body>
 <main id="creator" class="wrap">
 <header class="brand"><div class="ico">💝</div><h1>Um presente só de vocês</h1><p>Monte uma página inesquecível e transforme o link em QR Code.</p></header>
-<div class="layout">
-<section class="panel">
-<h2 class="section-title">Monte seu presente</h2><p class="muted">Escolha um modelo e edite. A prévia acompanha suas alterações.</p>
-<div class="templates" id="templates">
-<button class="template active" data-type="love"><span class="emoji">💗</span><b>Nossa história</b><small>Contador e linha do tempo</small></button>
-<button class="template" data-type="birthday"><span class="emoji">🎂</span><b>Aniversário</b><small>Bolo, velinhas e confetes</small></button>
-<button class="template" data-type="movie"><span class="emoji">🎬</span><b>Poster de filme</b><small>Visual cinematográfico</small></button>
-<button class="template" data-type="playlist"><span class="emoji">🎧</span><b>Playlist</b><small>Faixas com player de música</small></button>
-<button class="template" data-type="dating"><span class="emoji">💌</span><b>Pedido de namoro</b><small>Uma pergunta especial</small></button>
-<button class="template" data-type="wedding"><span class="emoji">💍</span><b>Pedido de casamento</b><small>Um momento inesquecível</small></button>
-<button class="template" data-type="declaration"><span class="emoji">❤️</span><b>Declaração</b><small>Uma carta de amor</small></button>
-<button class="template" data-type="invite"><span class="emoji">💐</span><b>Convite digital</b><small>Data, hora e local</small></button>
-</div>
-<div class="grid">
-<div class="field"><label for="to">Quem vai receber</label><input id="to" maxlength="50" placeholder="Nome da pessoa"></div>
-<div class="field"><label for="from">Quem está enviando</label><input id="from" maxlength="50" placeholder="Seu nome"></div>
-</div>
-<div class="field"><label for="title">Título</label><input id="title" maxlength="70" placeholder="Nossa história"></div>
-<div class="grid" id="dateRow">
-<div class="field" id="dateField"><label for="date">Data especial</label><input id="date" type="date"></div>
-<div class="field hidden" id="eventTimeField"><label for="eventTime">Horário</label><input id="eventTime" type="time"></div>
-</div>
-<div class="field hidden" id="placeField"><label for="place">Local do evento</label><input id="place" maxlength="120" placeholder="Endereço ou local"></div>
-<div class="field"><label for="message">Mensagem principal</label><textarea id="message" maxlength="1800" placeholder="Escreva o que você gostaria de dizer..."></textarea></div>
-<div class="field hidden" id="synopsisField"><label for="synopsis">Sinopse do filme</label><textarea id="synopsis" maxlength="500" placeholder="Uma história que começou..."></textarea></div>
-<div class="field hidden" id="timelineField"><label for="timeline">Linha do tempo (uma lembrança por linha: data | acontecimento)</label><textarea id="timeline" maxlength="900" placeholder="12/03/2024 | Nosso primeiro encontro&#10;20/04/2024 | A primeira viagem"></textarea></div>
-<div class="field hidden" id="tracksField"><label for="tracks">Músicas (uma por linha: título | link direto do áudio)</label><textarea id="tracks" maxlength="1200" placeholder="Nossa música | https://site.com/musica.mp3"></textarea></div>
-<div class="field hidden" id="questionField"><label for="question">Pergunta do pedido</label><input id="question" maxlength="120" placeholder="Aceita namorar comigo?"></div>
-<div class="field hidden" id="surpriseField"><label for="surpriseText">Mensagem da surpresa escondida</label><textarea id="surpriseText" maxlength="700" placeholder="Mais uma coisa que quero te contar..."></textarea></div>
-<div class="grid">
-<div class="field"><label for="color">Tema</label><select id="color"><option value="rose">Rosa romântico</option><option value="lilac">Lavanda</option><option value="gold">Dourado</option><option value="night">Noite</option><option value="cream">Creme elegante</option></select></div>
-<div class="field"><label for="font">Fonte</label><select id="font"><option value="elegant">Elegante</option><option value="clean">Moderna</option><option value="hand">Manuscrita</option></select></div>
-</div>
-<div class="grid">
-<div class="field"><label for="animation">Animação</label><select id="animation"><option value="soft">Suave</option><option value="float">Flutuante</option><option value="none">Sem animação</option></select></div>
-<div class="field"><label for="qrColor">Cor do QR Code</label><select id="qrColor"><option value="#873d58">Vinho</option><option value="#222222">Preto</option><option value="#604c83">Roxo</option><option value="#765522">Dourado</option></select></div>
-</div>
-<div class="field"><label for="photoUrls">Links públicos de fotos (até 4, separados por vírgula)</label><input id="photoUrls" placeholder="https://... , https://..."></div>
-<div class="field"><label for="photoFiles">Ou escolha fotos do celular para testar na prévia</label><input id="photoFiles" type="file" accept="image/*" multiple></div>
-<div class="field"><label for="videoUrl">Link direto de vídeo (opcional, MP4/WebM)</label><input id="videoUrl" type="url" placeholder="https://site.com/video.mp4"></div>
-<div class="field"><label for="videoFile">Vídeo do celular (somente prévia)</label><input id="videoFile" type="file" accept="video/*"></div>
-<div class="field"><label for="songUrl">Link direto de música/áudio (MP3, OGG ou WAV)</label><input id="songUrl" type="url" placeholder="https://site.com/musica.mp3"></div>
-<div class="field"><label for="audioFile">Áudio do celular (somente prévia)</label><input id="audioFile" type="file" accept="audio/*"></div>
-<div class="notice">Importante: links compartilhados levam textos e URLs. Fotos, vídeos e áudios escolhidos do aparelho aparecem apenas na prévia deste dispositivo; para a outra pessoa ver, use links públicos diretos. Links do YouTube/Spotify não são arquivos de áudio e não funcionam no player direto.</div>
-<div class="actions"><button class="btn" id="create">Gerar link e QR Code ✨</button></div>
-<div class="result" id="result"><h3>Seu presente está pronto! 💗</h3><div class="qr" id="qr"></div><p class="link" id="url"></p><div class="actions"><button class="btn" id="copy">Copiar link</button><button class="btn alt" id="share">Compartilhar</button><button class="btn alt" id="download">Baixar QR PNG</button></div></div>
+<nav class="stepper" aria-label="Etapas de criação" id="stepper">
+  <div class="step-dot active" data-step-dot="1"><b>1</b><span>Modelo</span></div><i></i>
+  <div class="step-dot" data-step-dot="2"><b>2</b><span>Conteúdo</span></div><i></i>
+  <div class="step-dot" data-step-dot="3"><b>3</b><span>Estilo</span></div><i></i>
+  <div class="step-dot" data-step-dot="4"><b>4</b><span>Finalizar</span></div>
+</nav>
+<section class="panel wizard-panel">
+  <section class="step-panel active" data-step="1">
+    <div class="step-heading"><span>ETAPA 1 DE 4</span><h2 class="section-title">Escolha a ocasião</h2><p class="muted">Cada modelo tem uma experiência diferente. Você poderá personalizar tudo depois.</p></div>
+    <div class="templates" id="templates">
+      <button class="template active" data-type="love"><span class="emoji">💗</span><b>Nossa história</b><small>Contador e linha do tempo</small></button>
+      <button class="template" data-type="birthday"><span class="emoji">🎂</span><b>Aniversário</b><small>Bolo e confetes</small></button>
+      <button class="template" data-type="movie"><span class="emoji">🎬</span><b>Poster de filme</b><small>Uma história de cinema</small></button>
+      <button class="template" data-type="playlist"><span class="emoji">🎧</span><b>Playlist</b><small>Músicas e lembranças</small></button>
+      <button class="template" data-type="dating"><span class="emoji">💌</span><b>Pedido de namoro</b><small>Faça a pergunta</small></button>
+      <button class="template" data-type="wedding"><span class="emoji">💍</span><b>Pedido de casamento</b><small>Um momento inesquecível</small></button>
+      <button class="template" data-type="declaration"><span class="emoji">❤️</span><b>Declaração</b><small>Uma carta especial</small></button>
+      <button class="template" data-type="invite"><span class="emoji">💐</span><b>Convite digital</b><small>Data, hora e local</small></button>
+    </div>
+    <div class="wizard-actions"><span></span><button class="btn" type="button" data-next>Continuar <span aria-hidden="true">→</span></button></div>
+  </section>
+
+  <section class="step-panel" data-step="2">
+    <div class="step-heading"><span>ETAPA 2 DE 4</span><h2 class="section-title">Conte sua história</h2><p class="muted">Preencha somente o que fizer sentido para o modelo escolhido.</p></div>
+    <div class="grid">
+      <div class="field"><label for="to">Quem vai receber</label><input id="to" maxlength="50" placeholder="Nome da pessoa"></div>
+      <div class="field"><label for="from">Quem está enviando</label><input id="from" maxlength="50" placeholder="Seu nome"></div>
+    </div>
+    <div class="field"><label for="title">Título</label><input id="title" maxlength="70" placeholder="Nossa história"></div>
+    <div class="grid" id="dateRow">
+      <div class="field" id="dateField"><label for="date">Data especial</label><input id="date" type="date"></div>
+      <div class="field hidden" id="eventTimeField"><label for="eventTime">Horário</label><input id="eventTime" type="time"></div>
+    </div>
+    <div class="field hidden" id="placeField"><label for="place">Local do evento</label><input id="place" maxlength="120" placeholder="Endereço ou local"></div>
+    <div class="field"><label for="message">Mensagem principal</label><textarea id="message" maxlength="1800" placeholder="Escreva o que você gostaria de dizer..."></textarea><small class="field-help">Até 1.800 caracteres.</small></div>
+    <div class="field hidden" id="synopsisField"><label for="synopsis">Sinopse do filme</label><textarea id="synopsis" maxlength="500" placeholder="Uma história que começou..."></textarea></div>
+    <div class="field hidden" id="timelineField"><label for="timeline">Linha do tempo</label><textarea id="timeline" maxlength="900" placeholder="12/03/2024 | Nosso primeiro encontro&#10;20/04/2024 | A primeira viagem"></textarea><small class="field-help">Uma lembrança por linha, separando data e acontecimento com |.</small></div>
+    <div class="field hidden" id="tracksField"><label for="tracks">Músicas da playlist</label><textarea id="tracks" maxlength="1200" placeholder="Nossa música | https://site.com/musica.mp3"></textarea><small class="field-help">Uma música por linha: título | link direto do áudio.</small></div>
+    <div class="field hidden" id="questionField"><label for="question">Pergunta do pedido</label><input id="question" maxlength="120" placeholder="Aceita namorar comigo?"></div>
+    <div class="field hidden" id="surpriseField"><label for="surpriseText">Mensagem surpresa (opcional)</label><textarea id="surpriseText" maxlength="700" placeholder="Mais uma coisa que quero te contar..."></textarea></div>
+    <div class="wizard-actions"><button class="btn alt" type="button" data-back>← Voltar</button><button class="btn" type="button" data-next>Continuar →</button></div>
+  </section>
+
+  <section class="step-panel" data-step="3">
+    <div class="step-heading"><span>ETAPA 3 DE 4</span><h2 class="section-title">Dê seu toque pessoal</h2><p class="muted">Escolha o visual e adicione fotos, vídeo ou música.</p></div>
+    <h3 class="subheading">Aparência</h3>
+    <div class="grid">
+      <div class="field"><label for="color">Paleta de cores</label><select id="color"><option value="rose">Rosa romântico</option><option value="lilac">Lavanda</option><option value="gold">Dourado</option><option value="night">Noite</option><option value="cream">Creme elegante</option></select></div>
+      <div class="field"><label for="font">Fonte</label><select id="font"><option value="elegant">Elegante</option><option value="clean">Moderna</option><option value="hand">Manuscrita</option></select></div>
+    </div>
+    <div class="grid">
+      <div class="field"><label for="animation">Animação</label><select id="animation"><option value="soft">Suave</option><option value="float">Flutuante</option><option value="none">Sem animação</option></select></div>
+      <div class="field"><label for="qrColor">Cor do QR Code</label><select id="qrColor"><option value="#873d58">Vinho</option><option value="#222222">Preto</option><option value="#604c83">Roxo</option><option value="#765522">Dourado</option></select></div>
+    </div>
+    <h3 class="subheading">Fotos e vídeos</h3>
+    <div class="field"><label for="photoUrls">Links públicos de fotos (até 4)</label><input id="photoUrls" placeholder="Cole links separados por vírgula"></div>
+    <div class="field"><label for="photoFiles">Selecionar fotos do celular</label><input id="photoFiles" type="file" accept="image/*" multiple><small class="field-help">Até 4 fotos, máximo 4 MB cada. Apenas prévia neste aparelho.</small></div>
+    <div class="field"><label for="videoUrl">Link direto de vídeo (MP4/WebM)</label><input id="videoUrl" type="url" placeholder="https://site.com/video.mp4"></div>
+    <div class="field"><label for="videoFile">Selecionar vídeo do celular</label><input id="videoFile" type="file" accept="video/*"><small class="field-help">Máximo 12 MB. Apenas prévia neste aparelho.</small></div>
+    <h3 class="subheading">Música</h3>
+    <div class="field"><label for="songUrl">Link direto de música/áudio (MP3, OGG ou WAV)</label><input id="songUrl" type="url" placeholder="https://site.com/musica.mp3"></div>
+    <div class="field"><label for="audioFile">Selecionar áudio do celular</label><input id="audioFile" type="file" accept="audio/*"><small class="field-help">Máximo 12 MB. Apenas prévia neste aparelho.</small></div>
+    <div class="notice">Para que a outra pessoa receba as mídias, use links públicos diretos. Arquivos escolhidos no celular não são enviados ao link compartilhado. YouTube e Spotify não são links diretos de áudio.</div>
+    <div class="wizard-actions"><button class="btn alt" type="button" data-back>← Voltar</button><button class="btn" type="button" data-next>Ver prévia →</button></div>
+  </section>
+
+  <section class="step-panel" data-step="4">
+    <div class="step-heading"><span>ETAPA 4 DE 4</span><h2 class="section-title">Revise e gere seu QR Code</h2><p class="muted">Confira como o presente será visto antes de compartilhar.</p></div>
+    <div class="preview" id="preview"></div>
+    <div class="result" id="result"><h3>Seu presente está pronto! 💗</h3><div class="qr" id="qr"></div><p class="link" id="url"></p><div class="actions"><button class="btn" id="copy">Copiar link</button><button class="btn alt" id="share">Compartilhar</button><button class="btn alt" id="download">Baixar QR PNG</button></div></div>
+    <div class="wizard-actions"><button class="btn alt" type="button" data-back>← Editar</button><button class="btn" id="create" type="button">Gerar link e QR Code ✨</button></div>
+  </section>
 </section>
-<aside class="panel preview-panel"><div class="preview-top"><h2 class="section-title">Pré-visualização</h2><span>Atualiza enquanto você edita</span></div><div class="preview" id="preview"></div><p class="hint">A prévia usa os dados preenchidos. Arquivos locais não são enviados ao criar o link.</p></aside>
-</div>
 <p class="footer">Gratuito • Sem cadastro • Seus dados ficam no link compartilhado</p>
 </main>
 <section id="viewer" class="viewer"><div class="gift"><article class="gift-card" id="giftCard"></article><p class="footer">Feito com carinho 💗</p></div></section>
@@ -73,6 +114,24 @@ const labels={love:'Nossa história',birthday:'Feliz aniversário!',movie:'O fil
 const palettes={rose:['#df718b','#873d58','#fff1f4','#fffdfb'],lilac:['#a78bc9','#604c83','#f5f0ff','#fffdfb'],gold:['#c49a50','#765522','#fff8e8','#fffdf9'],night:['#68749c','#343e66','#f0f2ff','#fbfbff'],cream:['#b49a78','#66513d','#f5eee4','#fffdf8']};
 let type='love',localPhotos=[],localVideo='',localAudio='',audioEl=null,videoObject='';
 const fields={dateField:['love','dating','wedding','declaration'],eventTimeField:['invite'],placeField:['invite'],synopsisField:['movie'],timelineField:['love'],tracksField:['playlist'],questionField:['dating','wedding'],surpriseField:['love','birthday','dating','wedding','declaration']};
+
+let currentStep=1;
+function showStep(n){
+  currentStep=Math.max(1,Math.min(4,n));
+  document.querySelectorAll('.step-panel').forEach(p=>p.classList.toggle('active',Number(p.dataset.step)===currentStep));
+  document.querySelectorAll('[data-step-dot]').forEach(dot=>{const k=Number(dot.dataset.stepDot);dot.classList.toggle('active',k===currentStep);dot.classList.toggle('done',k<currentStep);});
+  $('result').classList.remove('show');
+  if(currentStep===4)preview();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{
+  if(currentStep===2){
+    if(!$('message').value.trim()&&!$('tracks').value.trim()){alert('Escreva uma mensagem ou adicione as músicas da playlist.');$('message').focus();return;}
+    if(type==='love'&&!$('date').value){alert('Informe a data especial para ativar o contador.');$('date').focus();return;}
+  }
+  showStep(currentStep+1);
+}));
+document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>showStep(currentStep-1)));
 function updateFields(){Object.keys(fields).forEach(id=>$(id).classList.toggle('hidden',!fields[id].includes(type)));$('dateRow').classList.toggle('hidden',type==='movie'||type==='birthday'||type==='playlist'||type==='declaration');$('title').placeholder=labels[type];$('question').placeholder=type==='wedding'?'Quer se casar comigo?':'Aceita namorar comigo?';}
 $('templates').addEventListener('click',e=>{const b=e.target.closest('[data-type]');if(!b)return;type=b.dataset.type;document.querySelectorAll('.template').forEach(x=>x.classList.toggle('active',x===b));updateFields();preview();});
 function getData(includeLocal){const photos=$('photoUrls').value.split(',').map(x=>x.trim()).filter(x=>/^https?:\/\//i.test(x)).slice(0,4);return {v:2,type,to:$('to').value.trim(),from:$('from').value.trim(),title:$('title').value.trim(),date:$('date').value,eventTime:$('eventTime').value,place:$('place').value.trim(),message:$('message').value.trim(),synopsis:$('synopsis').value.trim(),timeline:$('timeline').value.trim(),tracks:$('tracks').value.trim(),question:$('question').value.trim(),surprise:$('surpriseText').value.trim(),color:$('color').value,font:$('font').value,animation:$('animation').value,qrColor:$('qrColor').value,photos,video:$('videoUrl').value.trim(),song:$('songUrl').value.trim(),localPhotos:includeLocal?localPhotos:[],localVideo:includeLocal?localVideo:'',localAudio:includeLocal?localAudio:''};}
@@ -111,7 +170,7 @@ $('create').onclick=()=>{const d=getData(false);if(!d.message&&!d.tracks){alert(
 async function copyText(text,label){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);}else{const t=el('textarea');t.value=text;document.body.append(t);t.select();document.execCommand('copy');t.remove();}$('copy').textContent=label;}catch(e){prompt('Copie o link:',text);}}
 function render(d){$('creator').classList.add('hidden');$('viewer').classList.add('active');const card=makeCard(d,false);$('giftCard').replaceWith(card);card.id='giftCard';document.title=(d.title||'Um presente especial')+' 💗';}
 if(location.hash.startsWith('#presente=')){try{const d=decode(location.hash.slice(10));if(![1,2].includes(d.v)||typeof d.message!=='string'||d.message.length>1800||!labels[d.type])throw Error('invalid');render(d);}catch(e){$('creator').innerHTML='<section class="panel"><h2 class="section-title">Link inválido</h2><p>Este presente está incompleto ou não é compatível.</p></section>';}}
-else{updateFields();preview();}
+else{updateFields();preview();showStep(1);}
 </script>
 </body>
 </html>
