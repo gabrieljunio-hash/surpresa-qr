@@ -26,6 +26,34 @@
 .wizard-actions .btn{min-width:125px}
 #stepper{user-select:none}
 @media(max-width:520px){.stepper{gap:5px}.step-dot{gap:4px;font-size:9px}.step-dot b{width:25px;height:25px}.stepper>i{max-width:30px}.wizard-panel{min-height:0}.wizard-actions .btn{min-width:0;flex:1}.step-heading{margin-bottom:14px}}
+
+/* Modelos com prévias mais ricas */
+.template{padding:10px;min-height:0;transition:transform .18s,border-color .18s,box-shadow .18s}
+.template:hover{transform:translateY(-2px);box-shadow:0 8px 20px #813b5515}
+.template-art{height:118px;border-radius:12px;margin-bottom:10px;position:relative;isolation:isolate}
+.template-art:before,.template-art:after{content:"";position:absolute;z-index:-1;pointer-events:none}
+.template-art:before{width:92px;height:92px;border:1px solid currentColor;border-radius:50%;opacity:.16;right:-20px;top:-28px}
+.template-art:after{width:75px;height:75px;border:1px solid currentColor;border-radius:50%;opacity:.16;left:-25px;bottom:-35px}
+.template-art strong{font-size:29px;text-shadow:0 3px 12px #00000012}
+.template-art span{font-size:9px;font-weight:800;letter-spacing:.16em}
+.template-art i{height:5px;opacity:.28}
+.art-love{background:radial-gradient(circle at 50% 42%,#fff 0 12%,transparent 13%),linear-gradient(135deg,#fff0f4,#f2c5d3)}
+.art-birthday{background:radial-gradient(circle at 50% 48%,#fff8df 0 23%,transparent 24%),linear-gradient(135deg,#fff5d9,#edc17d)}
+.art-movie{background:linear-gradient(145deg,#171526,#594366 65%,#241d35)}
+.art-playlist{background:radial-gradient(circle at 50% 48%,#effaf3 0 24%,transparent 25%),linear-gradient(135deg,#dcefe5,#9bc9b2)}
+.art-dating{background:radial-gradient(circle at 50% 48%,#fff 0 23%,transparent 24%),linear-gradient(135deg,#fff0f4,#e9a9bf)}
+.art-wedding{background:radial-gradient(circle at 50% 48%,#fff9ed 0 24%,transparent 25%),linear-gradient(135deg,#f8f0df,#d6bd87)}
+.art-declaration{background:radial-gradient(circle at 50% 48%,#fff 0 24%,transparent 25%),linear-gradient(135deg,#f5efff,#c7b3e2)}
+.art-invite{background:radial-gradient(circle at 50% 48%,#fff 0 24%,transparent 25%),linear-gradient(135deg,#edf3ff,#aebfe7)}
+.preset-area{margin:14px 0 5px;padding:13px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(135deg,#fffafb,#fff)}
+.preset-area>strong{display:block;color:var(--deep);font-size:12px;margin-bottom:4px}
+.preset-area>p{margin:0 0 9px;color:var(--muted);font-size:11px;line-height:1.45}
+.preset-list{display:flex;flex-wrap:wrap;gap:7px}
+.preset-chip{border:1px solid #e8cbd4;background:#fff;border-radius:999px;padding:8px 11px;color:var(--deep);font-size:11px;font-weight:700}
+.preset-chip:hover,.preset-chip:focus{background:var(--soft);border-color:var(--accent)}
+.preset-feedback{font-size:10px;color:#548064;margin-top:8px;min-height:14px}
+@media(max-width:520px){.template-art{height:105px}.template{padding:8px}.preset-chip{font-size:10px}}
+
 </style>
 </head>
 <body>
@@ -66,6 +94,7 @@
     </div>
     <div class="field hidden" id="placeField"><label for="place">Local do evento</label><input id="place" maxlength="120" placeholder="Endereço ou local"></div>
     <div class="field"><label for="message">Mensagem principal</label><textarea id="message" maxlength="1800" placeholder="Escreva o que você gostaria de dizer..."></textarea><small class="field-help">Até 1.800 caracteres.</small></div>
+    <div class="preset-area" id="presetArea"><strong>Quer uma ajudinha para começar?</strong><p>Escolha uma ideia pronta. Você pode editar tudo depois.</p><div class="preset-list" id="presetList"></div><div class="preset-feedback" id="presetFeedback" aria-live="polite"></div></div>
     <div class="field hidden" id="synopsisField"><label for="synopsis">Sinopse do filme</label><textarea id="synopsis" maxlength="500" placeholder="Uma história que começou..."></textarea></div>
     <div class="field hidden" id="timelineField"><label for="timeline">Linha do tempo</label><textarea id="timeline" maxlength="900" placeholder="12/03/2024 | Nosso primeiro encontro&#10;20/04/2024 | A primeira viagem"></textarea><small class="field-help">Uma lembrança por linha, separando data e acontecimento com |.</small></div>
     <div class="field hidden" id="tracksField"><label for="tracks">Músicas da playlist</label><textarea id="tracks" maxlength="1200" placeholder="Nossa música | https://site.com/musica.mp3"></textarea><small class="field-help">Uma música por linha: título | link direto do áudio.</small></div>
@@ -132,7 +161,65 @@ document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',(
   showStep(currentStep+1);
 }));
 document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>showStep(currentStep-1)));
-function updateFields(){Object.keys(fields).forEach(id=>$(id).classList.toggle('hidden',!fields[id].includes(type)));$('dateRow').classList.toggle('hidden',type==='movie'||type==='birthday'||type==='playlist'||type==='declaration');$('title').placeholder=labels[type];$('question').placeholder=type==='wedding'?'Quer se casar comigo?':'Aceita namorar comigo?';const guides={love:'Conte como a história começou. A data ativa o contador e a linha do tempo guarda momentos marcantes.',birthday:'Prepare uma mensagem de aniversário. Na página final, a pessoa poderá apagar as velinhas e ver os confetes.',movie:'Crie o título e a sinopse do filme de vocês. O presente ganha um visual de cartaz de cinema.',playlist:'Monte uma trilha sonora com músicas que tenham significado. Cada faixa pode ter seu próprio link de áudio.',dating:'Escreva a pergunta do pedido e prepare a surpresa para a resposta.',wedding:'Prepare o pedido de casamento com uma pergunta especial e uma apresentação elegante.',declaration:'Escreva uma carta do seu jeito. O modelo destaca a mensagem como protagonista.',invite:'Informe data, horário e local para criar um convite pronto para compartilhar.'};$('contentGuide').textContent=guides[type]||'Preencha os campos para montar seu presente.';}
+
+const contentPresets={
+love:[
+{label:'Romântico e delicado',title:'Cada dia ao seu lado',message:'Desde que você chegou, até os dias comuns ganharam um motivo especial. Gosto de cada detalhe nosso, das conversas sem hora para acabar e da paz que encontro em você. Que a nossa história continue sendo escrita com carinho, parceria e muitos momentos felizes.',surprise:'Se eu pudesse escolher de novo, ainda escolheria você.'},
+{label:'Curto e marcante',title:'Meu lugar favorito',message:'Meu lugar favorito não é um lugar. É onde você está. Obrigado(a) por fazer parte da minha vida e tornar tudo mais bonito.',surprise:'Você é uma das melhores partes dos meus dias.'},
+{label:'Com saudade',title:'Mesmo de longe',message:'A distância pode mudar os nossos dias, mas não muda o que sinto. Você está presente nos meus pensamentos, nos meus planos e em cada saudade que aparece.',surprise:'Estou contando os dias para estar pertinho de você.'}
+],
+birthday:[
+{label:'Carinhoso',title:'Hoje o dia é todo seu!',message:'Que seu novo ciclo seja cheio de saúde, sonhos realizados, boas surpresas e motivos para sorrir. Você merece tudo de mais bonito que a vida pode oferecer. Feliz aniversário!',surprise:'Meu desejo especial é viver muitos outros momentos felizes ao seu lado.'},
+{label:'Divertido',title:'Parabéns para você! 🎉',message:'Hoje está liberado sorrir mais, comer bolo sem culpa e receber todo o carinho do mundo. Que nunca faltem aventuras, boas histórias e motivos para comemorar. Aproveite muito seu dia!',surprise:'Preparei essa surpresa só para arrancar mais um sorriso seu!'},
+{label:'Emocionante',title:'Que sorte a minha ter você',message:'Hoje eu celebro a sua vida e a alegria de poder fazer parte dela. Que você nunca perca esse brilho único e que cada sonho encontre seu caminho. Feliz vida!',surprise:'Você é muito especial para mim.'}
+],
+movie:[
+{label:'Comédia romântica',title:'A melhor história de amor',synopsis:'Dois caminhos se cruzam por acaso. Entre risadas, descobertas e pequenos momentos, nasce uma história que ninguém quer ver terminar. Uma produção cheia de carinho, parceria e cenas inesquecíveis.',message:'Meu filme favorito é aquele em que você está comigo.'},
+{label:'Grande romance',title:'Até o infinito',synopsis:'Uma conexão improvável transforma dias comuns em lembranças extraordinárias. Quando os créditos parecem chegar, os dois descobrem que a melhor parte da história ainda está por vir.',message:'Que a nossa história tenha muitas temporadas.'},
+{label:'Aventura',title:'Nós contra o mundo',synopsis:'Uma dupla, muitos planos e uma coleção de aventuras. Nem sempre o roteiro sai como esperado, mas juntos cada capítulo vale a pena.',message:'Com você, qualquer caminho vira aventura.'}
+],
+playlist:[
+{label:'Trilha do casal',title:'A trilha sonora de nós dois',message:'Cada música guarda um pedacinho da nossa história. Dê o play e lembre de cada momento, cada sorriso e cada sentimento que essas canções representam.',surprise:'Escolha uma faixa, aumente o volume e deixe a lembrança falar.'},
+{label:'Músicas especiais',title:'Canções que lembram você',message:'Tem músicas que começam a tocar e imediatamente me levam até você. Reuni algumas delas aqui para transformar lembranças em uma trilha sonora.'},
+{label:'Para ouvir juntinhos',title:'Aperte o play 💗',message:'Uma seleção para ouvir sem pressa, cantar junto e guardar mais um momento bonito na memória.'}
+],
+dating:[
+{label:'Fofo e direto',title:'Tenho uma pergunta...',question:'Você aceita namorar comigo?',message:'Eu gosto de estar com você, de conhecer cada detalhe seu e imaginar tudo o que ainda podemos viver. Quero dar um passo a mais nessa história.' ,surprise:'Prometo cuidar dessa história com carinho.'},
+{label:'Criativo',title:'Vamos escrever o próximo capítulo?',question:'Topa viver essa história comigo?',message:'Já temos boas lembranças, conversas e sorrisos. Que tal transformar tudo isso no começo de algo ainda mais especial?'},
+{label:'Romântico',title:'Meu próximo desejo é você',question:'Quer ser minha pessoa?',message:'Não quero prometer uma história perfeita, mas quero construir uma história verdadeira, com respeito, parceria e muito carinho.'}
+],
+wedding:[
+{label:'Clássico',title:'Uma pergunta para sempre',question:'Quer se casar comigo?',message:'Quero dividir os dias simples e os extraordinários, os planos, os desafios e todas as pequenas alegrias. Quero continuar escolhendo você, todos os dias.' ,surprise:'Que venha o nosso para sempre.'},
+{label:'Emocionante',title:'Nosso próximo capítulo',question:'Vamos construir uma vida juntos?',message:'A vida ficou mais bonita desde que caminhamos lado a lado. Hoje quero te convidar para dar o passo mais especial da nossa história.'},
+{label:'Simples e sincero',title:'É com você',question:'Aceita viver o resto da vida comigo?',message:'Meu maior plano é continuar fazendo planos com você. Com amor, respeito e parceria, quero construir nosso futuro.'}
+],
+declaration:[
+{label:'Poético',title:'Se eu pudesse explicar...',message:'Talvez eu nunca encontre palavras suficientes para traduzir tudo o que sinto. Mas espero que você perceba em cada gesto, em cada cuidado e em cada escolha o quanto é importante para mim. Você faz a vida ter mais cor.' ,surprise:'Gosto de você mais do que consigo colocar em palavras.'},
+{label:'Sincero',title:'Quero que você saiba',message:'Nem sempre sei dizer do jeito certo, mas quero que você saiba que sua presença faz diferença. Admiro seu jeito, valorizo nossos momentos e sou feliz por ter você na minha vida.'},
+{label:'Apaixonado',title:'Meu pensamento favorito',message:'No meio da correria, é em você que encontro um pensamento bom. Seu sorriso, sua voz e seu jeito ficam comigo mesmo quando estamos longe. Você é muito especial.'}
+],
+invite:[
+{label:'Elegante',title:'Um momento especial',message:'Sua presença vai deixar esse momento ainda mais bonito. Preparei tudo com carinho e espero comemorar ao seu lado. Será muito especial ter você comigo.'},
+{label:'Descontraído',title:'Você não pode faltar!',message:'Vai ter encontro, alegria e boas lembranças! Reserve esse momento e venha aproveitar comigo. Estou preparando tudo com muito carinho.'},
+{label:'Romântico',title:'Celebre esse momento comigo',message:'Alguns momentos ficam ainda melhores quando compartilhados com pessoas especiais. Quero muito ter você comigo nesse dia.'}
+]
+};
+function renderPresets(){
+ const area=$('presetArea'),list=$('presetList');if(!area||!list)return;
+ const presets=contentPresets[type]||[];list.replaceChildren();$('presetFeedback').textContent='';
+ presets.forEach((preset,index)=>{const b=el('button','preset-chip',preset.label);b.type='button';b.onclick=()=>{
+  if(preset.title)$('title').value=preset.title;
+  if(preset.message)$('message').value=preset.message;
+  if(preset.surprise!==undefined){$('surpriseText').value=preset.surprise;}
+  if(preset.synopsis)$('synopsis').value=preset.synopsis;
+  if(preset.question)$('question').value=preset.question;
+  $('presetFeedback').textContent='Sugestão aplicada. Edite os campos para deixar com a sua cara.';
+  preview();
+ };list.append(b);});
+ area.classList.toggle('hidden',presets.length===0);
+}
+
+function updateFields(){Object.keys(fields).forEach(id=>$(id).classList.toggle('hidden',!fields[id].includes(type)));$('dateRow').classList.toggle('hidden',type==='movie'||type==='birthday'||type==='playlist'||type==='declaration');$('title').placeholder=labels[type];$('question').placeholder=type==='wedding'?'Quer se casar comigo?':'Aceita namorar comigo?';const guides={love:'Conte como a história começou. A data ativa o contador e a linha do tempo guarda momentos marcantes.',birthday:'Prepare uma mensagem de aniversário. Na página final, a pessoa poderá apagar as velinhas e ver os confetes.',movie:'Crie o título e a sinopse do filme de vocês. O presente ganha um visual de cartaz de cinema.',playlist:'Monte uma trilha sonora com músicas que tenham significado. Cada faixa pode ter seu próprio link de áudio.',dating:'Escreva a pergunta do pedido e prepare a surpresa para a resposta.',wedding:'Prepare o pedido de casamento com uma pergunta especial e uma apresentação elegante.',declaration:'Escreva uma carta do seu jeito. O modelo destaca a mensagem como protagonista.',invite:'Informe data, horário e local para criar um convite pronto para compartilhar.'};$('contentGuide').textContent=guides[type]||'Preencha os campos para montar seu presente.';renderPresets();}
 $('templates').addEventListener('click',e=>{const b=e.target.closest('[data-type]');if(!b)return;type=b.dataset.type;document.querySelectorAll('.template').forEach(x=>x.classList.toggle('active',x===b));updateFields();preview();});
 function getData(includeLocal){const photos=[];return {v:2,type,to:$('to').value.trim(),from:$('from').value.trim(),title:$('title').value.trim(),date:$('date').value,eventTime:$('eventTime').value,place:$('place').value.trim(),message:$('message').value.trim(),synopsis:$('synopsis').value.trim(),timeline:$('timeline').value.trim(),tracks:$('tracks').value.trim(),question:$('question').value.trim(),surprise:$('surpriseText').value.trim(),color:$('color').value,font:$('font').value,animation:$('animation').value,qrColor:$('qrColor').value,photos,video:$('videoUrl').value.trim(),song:$('songUrl').value.trim(),localPhotos:includeLocal?localPhotos:[],localVideo:includeLocal?localVideo:'',localAudio:includeLocal?localAudio:''};}
 function encode(o){const bytes=new TextEncoder().encode(JSON.stringify(o));let s='';bytes.forEach(b=>s+=String.fromCharCode(b));return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
