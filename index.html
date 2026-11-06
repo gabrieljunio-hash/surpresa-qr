@@ -122,6 +122,97 @@
 .field-presets .preset-chip{padding:6px 9px;font-size:10px}
 @media(max-width:520px){.template-art{height:128px}.mini-preview{height:43px}.field-presets{margin-bottom:10px}}
 
+
+/* Redesign visual: presente imersivo, com foco na experiência de quem recebe */
+.gift-experience{width:100%;max-width:560px;padding:0;border:0;border-radius:24px;overflow:hidden;text-align:left;background:#101014!important;color:#f8f2f4;box-shadow:0 24px 70px #120b1340}
+.gift-hero{height:clamp(280px,58vw,430px);min-height:280px;position:relative;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 50% 30%,#795267,#17131d 72%)}
+.gift-cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;z-index:-2;cursor:zoom-in;transition:transform 1.2s ease}
+.gift-experience:hover .gift-cover-image{transform:scale(1.025)}
+.gift-hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#09080a08 8%,#09080a20 36%,#09080aef 100%)}
+.gift-hero-content{width:100%;padding:24px clamp(18px,5vw,34px) 27px;color:white}
+.gift-experience .eyebrow{color:#f6dce5;font-size:9px;font-weight:800;letter-spacing:.2em}
+.gift-experience .type-ornament{font-size:19px;color:#f7cbd9;letter-spacing:.3em;margin:8px 0}
+.gift-experience .gift-title{font:500 clamp(30px,7vw,48px)/1.04 Georgia,serif;color:white;letter-spacing:-.025em;margin:8px 0 0;text-wrap:balance}
+.gift-experience .hero-tagline{margin-top:12px;color:#f6d7e2;font-size:9px;letter-spacing:.22em;font-weight:800}
+.gift-experience>.message{font:17px/1.8 Georgia,serif;color:#e8e0e4;padding:22px 25px 6px;margin:0;white-space:pre-wrap}
+.gift-experience>.eyebrow:not(.gift-hero .eyebrow){color:#c7b5bf}
+.gift-experience>.counter{justify-content:flex-start;gap:7px;padding:18px 22px;margin:0}
+.gift-experience>.counter div{flex:1;min-width:0;text-align:center;background:#ffffff0c;border:1px solid #ffffff17;border-radius:13px;padding:12px 5px}
+.gift-experience>.counter strong{font:500 25px Georgia,serif;color:#fff}
+.gift-experience>.counter small{color:#cbbbc3;font-size:9px;letter-spacing:.06em;text-transform:uppercase}
+.memory-section{padding:12px 20px 20px}
+.memory-heading{font-size:9px;letter-spacing:.22em;color:#c8b4bf;font-weight:800;margin:0 0 10px}
+.gift-experience .photos{display:flex;gap:9px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 8px;margin:0;scrollbar-width:thin;scrollbar-color:#806575 transparent}
+.gift-experience .photos img{flex:0 0 74%;height:210px;border-radius:13px;object-fit:cover;scroll-snap-align:start}
+.gift-experience .timeline{margin:8px 22px 18px;border-color:#b97e98}
+.gift-experience .timeline-item b{color:#f0c4d4}
+.gift-experience .timeline-item p{color:#d7cbd1}
+.gift-experience .media-player{padding:0 20px 18px;margin:0}
+.gift-experience .media-player audio,.gift-experience .media-player video{width:100%;border-radius:12px;filter:invert(.88) hue-rotate(180deg)}
+.gift-experience .surprise{padding:4px 22px 22px}
+.gift-experience .surprise-content{background:#ffffff12;color:#fff;border:1px solid #ffffff1c}
+.gift-experience .btn{background:#f6d8e2;color:#351c29;border-radius:999px;padding:13px 20px}
+.gift-experience .btn.alt{background:#ffffff14;color:#fff;border:1px solid #ffffff35}
+.gift-experience .invite-info{margin:18px 22px;background:#ffffff12;color:#fff;border:1px solid #ffffff1b}
+.gift-experience .invite-info p{margin:7px 0}
+.gift-experience .track{margin:7px 20px;background:#ffffff0e;color:#fff;border:1px solid #ffffff13;border-radius:13px;padding:10px}
+.gift-experience .track small{color:#c8b9c1}
+.gift-experience .track button{background:#f4d5df;color:#3b1f2d}
+.gift-experience .candle{text-align:center;padding-top:12px}
+.gift-experience>.btn.alt{margin:0 22px 18px}
+.gift-experience.type-birthday{background:linear-gradient(155deg,#33243a,#17131d)!important}
+.gift-experience.type-birthday .gift-hero{background:radial-gradient(circle at 50% 35%,#9b6b55,#322139 68%)}
+.gift-experience.type-playlist{background:linear-gradient(155deg,#152c26,#101713)!important}
+.gift-experience.type-playlist .gift-hero{background:radial-gradient(circle at 50% 35%,#467b66,#14251f 70%)}
+.gift-experience.type-wedding{background:#211d19!important}
+.gift-experience.type-wedding .gift-hero-shade{background:linear-gradient(180deg,#140f0b08 5%,#17120fe8 100%)}
+.gift-experience.type-wedding .gift-title{font-family:Georgia,serif;font-weight:400;letter-spacing:.04em}
+.gift-experience.type-declaration{background:#211b25!important}
+.gift-experience.type-declaration .gift-hero{height:310px}
+.gift-experience.type-declaration>.message{font-size:19px;line-height:1.95;font-style:italic}
+.gift-experience.type-invite{background:#25221e!important}
+.gift-experience.type-invite .gift-hero{height:330px}
+.gift-experience.type-invite .invite-info{border:1px solid #d2bd91;background:#ffffff0c}
+.gift-experience.type-movie .gift-hero{height:clamp(330px,72vw,490px)}
+.gift-experience.type-movie .gift-title{text-transform:uppercase;letter-spacing:.015em;font-family:Arial,sans-serif;font-weight:900}
+.gift-experience.type-movie>.message{font:16px/1.8 Arial,sans-serif;color:#d6d2d5;padding-top:8px}
+.gift-experience.type-dating .gift-hero{height:360px}
+.gift-experience.type-dating .gift-title{font-size:clamp(32px,7vw,44px)}
+.gift-experience .footer{color:#b7a6af}
+.viewer{background:#08080b;padding:20px 12px 38px;align-items:flex-start}
+.viewer.active{align-items:flex-start}
+.viewer .gift{width:min(100%,650px);margin:0 auto}
+.viewer .gift-card{max-width:100%;min-height:calc(100vh - 45px);border-radius:22px}
+.viewer .gift-experience{min-height:0}
+.viewer .photos img{height:240px}
+#preview .gift-experience{max-width:470px}
+.device-preview .gift-experience{min-height:0;border-radius:17px}
+.device-preview .gift-hero{height:250px;min-height:250px}
+.device-preview .gift-hero-content{padding:16px 13px}
+.device-preview .gift-experience .gift-title{font-size:25px}
+.device-preview .gift-experience>.message{font-size:13px;padding:15px 13px}
+.device-preview .gift-experience>.counter{padding:12px}
+.device-preview .gift-experience>.counter strong{font-size:18px}
+.device-preview .gift-experience .photos img{height:120px}
+.demo-stage{background:#111016;padding:12px}
+.demo-stage .gift-experience{max-width:410px}
+.demo-stage .gift-hero{height:300px;min-height:300px}
+.demo-stage .gift-experience>.message{font-size:15px}
+@media(max-width:520px){
+ .gift-experience{border-radius:18px}
+ .gift-hero{height:340px;min-height:280px}
+ .gift-experience>.message{font-size:16px;padding:19px 18px 5px}
+ .gift-experience>.counter{padding:14px 14px}
+ .gift-experience>.counter strong{font-size:21px}
+ .memory-section{padding:10px 15px 16px}
+ .gift-experience .photos img{flex-basis:82%;height:220px}
+ .gift-experience .invite-info{margin:15px}
+ .gift-experience .track{margin:7px 14px}
+ .gift-experience .surprise{padding:4px 15px 18px}
+ .viewer{padding:8px 7px 28px}
+ .viewer .gift-card{min-height:calc(100vh - 16px)}
+}
+
 </style>
 </head>
 <body>
@@ -335,8 +426,8 @@ function openGallery(items,index){galleryItems=items;galleryIndex=index;showGall
 function showGalleryImage(){if(!galleryItems.length)return;$('lightboxImage').src=galleryItems[galleryIndex];$('lightboxCount').textContent=(galleryIndex+1)+' / '+galleryItems.length;$('lightboxPrev').style.display=galleryItems.length>1?'block':'none';$('lightboxNext').style.display=galleryItems.length>1?'block':'none';}
 function closeGallery(){$('lightbox').classList.remove('open');document.body.style.overflow='';}
 $('lightboxClose').onclick=closeGallery;$('lightboxPrev').onclick=()=>{galleryIndex=(galleryIndex-1+galleryItems.length)%galleryItems.length;showGalleryImage();};$('lightboxNext').onclick=()=>{galleryIndex=(galleryIndex+1)%galleryItems.length;showGalleryImage();};$('lightbox').addEventListener('click',e=>{if(e.target===$('lightbox'))closeGallery();});document.addEventListener('keydown',e=>{if(!$('lightbox').classList.contains('open'))return;if(e.key==='Escape')closeGallery();if(e.key==='ArrowLeft')$('lightboxPrev').click();if(e.key==='ArrowRight')$('lightboxNext').click();});
-function addPhotos(card,d){const list=photoList(d);if(!list.length)return;const box=el('div','photos');list.forEach((src,index)=>{const im=el('img');im.src=src;im.alt='Abrir foto '+(index+1)+' da galeria';im.loading='lazy';im.tabIndex=0;im.onclick=()=>openGallery(list,index);im.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGallery(list,index);}};im.onerror=()=>im.remove();box.append(im)});card.append(box);}
-function makeCard(d,live){const p=palettes[d.color]||palettes.rose;const card=el('article','gift-card type-'+(d.type||'love')+' font-'+(d.font||'elegant')+' anim-'+(d.animation||'soft'));card.style.setProperty('--accent',p[0]);card.style.setProperty('--deep',p[1]);card.style.setProperty('--soft',p[2]);card.style.backgroundColor=p[3];if(d.type==='movie')card.classList.add('poster');const eyebrow=el('div','eyebrow',d.to?'Uma surpresa para '+d.to:'Um presente especial');const ornaments={love:'♥  ♥  ♥',birthday:'✦  ✧  ✦',movie:'✦  •  ✦',playlist:'♫',dating:'♡',wedding:'❦',declaration:'❦',invite:'✧  ✦  ✧'};card.append(eyebrow,el('div','type-ornament',ornaments[d.type]||'♥'));const title=el('h2','gift-title',d.title||labels[d.type]||'Um presente especial');card.append(title);
+function addPhotos(card,d){const all=photoList(d);if(!all.length)return;const list=['love','movie','dating','wedding','invite','declaration'].includes(d.type)?all.slice(1):all;if(!list.length)return;const section=el('section','memory-section');section.append(el('div','memory-heading','MEMÓRIAS'));const box=el('div','photos');list.forEach((src,index)=>{const actualIndex=all.indexOf(src);const im=el('img');im.src=src;im.alt='Abrir foto '+(actualIndex+1)+' da galeria';im.loading='lazy';im.tabIndex=0;im.onclick=()=>openGallery(all,actualIndex);im.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGallery(all,actualIndex);}};im.onerror=()=>im.remove();box.append(im)});section.append(box);card.append(section);}
+function makeCard(d,live){const p=palettes[d.color]||palettes.rose;const type=d.type||'love';const card=el('article','gift-card gift-experience type-'+type+' font-'+(d.font||'elegant')+' anim-'+(d.animation||'soft'));card.style.setProperty('--accent',p[0]);card.style.setProperty('--deep',p[1]);card.style.setProperty('--soft',p[2]);card.style.backgroundColor=p[3];if(type==='movie')card.classList.add('poster');const eyebrow=el('div','eyebrow',d.to?'UMA SURPRESA PARA '+d.to.toUpperCase():'UM PRESENTE ESPECIAL');const ornaments={love:'♥',birthday:'✦  ✧  ✦',movie:'✦  •  ✦',playlist:'♫',dating:'♡',wedding:'❦',declaration:'❦',invite:'✧  ✦  ✧'};const title=el('h2','gift-title',d.title||labels[type]||'Um presente especial');const hero=el('div','gift-hero hero-'+type);const covers={love:'https://images.unsplash.com/photo-1756804437161-80a8a94bad58?fit=crop&w=1000&q=85',movie:'https://images.unsplash.com/photo-1756804437161-80a8a94bad58?fit=crop&w=1000&q=85',dating:'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?fit=crop&w=1000&q=85',wedding:'https://images.unsplash.com/photo-1529634597503-139d3726fed5?fit=crop&w=1000&q=85',invite:'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?fit=crop&w=1000&q=85',declaration:'https://images.unsplash.com/photo-1756804437161-80a8a94bad58?fit=crop&w=1000&q=85'};const chosen=photoList(d);const cover=chosen[0]||covers[type]||'';if(cover){const img=el('img','gift-cover-image');img.src=cover;img.alt='Imagem de capa da homenagem';img.loading='lazy';img.onerror=()=>img.remove();if(chosen.length){img.tabIndex=0;img.onclick=()=>openGallery(chosen,0);}hero.append(img);}const shade=el('div','gift-hero-shade');const content=el('div','gift-hero-content');content.append(eyebrow,el('div','type-ornament',ornaments[type]||'♥'),title);if(type==='movie')content.append(el('div','hero-tagline',d.synopsis?'UMA HISTÓRIA DE AMOR':'NOSSA HISTÓRIA, NOSSO FILME'));hero.append(shade,content);card.append(hero);
 if(d.type==='birthday'){card.append(el('div','candle','🎂 🕯️ 🕯️ 🕯️'));const b=el('button','btn alt','Apagar as velinhas ✨');b.onclick=()=>{b.textContent='✨ Desejo realizado!';confetti();};card.append(b);}
 if(d.type==='love'&&d.date){const c=counter(d.date);if(c){const box=el('div','counter');c.forEach(x=>{const a=el('div');a.append(el('strong','',String(x[1])),el('small','',x[0]));box.append(a)});card.append(box)}}
 if(d.type==='movie'&&d.synopsis)card.append(el('p','message',d.synopsis));
