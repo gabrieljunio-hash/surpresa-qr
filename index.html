@@ -213,6 +213,79 @@
  .viewer .gift-card{min-height:calc(100vh - 16px)}
 }
 
+
+/* Acabamento do criador: editorial, limpo e mobile-first */
+body{background:radial-gradient(ellipse at 50% -12%,#f7dfe6 0,transparent 42%),linear-gradient(160deg,#fbf8f5,#f4edf0 72%,#f8f4f1);color:#2b2026}
+.wrap{width:min(100% - 30px,920px);padding:30px 0 60px}
+.brand{margin:0 auto 27px;max-width:650px}
+.brand .ico{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 10px;border-radius:18px;background:#fff;box-shadow:0 8px 25px #71435516;font-size:25px}
+.brand h1{font:500 clamp(30px,6vw,43px)/1.1 Georgia,serif;letter-spacing:-.035em;color:#573443}
+.brand p{font-size:13px;color:#89747e;line-height:1.6}
+.stepper{max-width:590px;margin-bottom:20px;gap:12px}
+.step-dot{font-size:11px;color:#9a8790}
+.step-dot b{width:32px;height:32px;background:#fff;border-color:#eadce1;color:#917d86;box-shadow:0 3px 10px #6035480a}
+.step-dot.active b,.step-dot.done b{background:#7f4059;border-color:#7f4059}
+.step-dot.active{color:#63354a}
+.stepper>i{background:#e5d4db;height:2px;border-radius:4px}
+.wizard-panel{max-width:860px;padding:clamp(19px,4vw,34px);border:1px solid #eee1e5;border-radius:25px;background:#fffdfc;box-shadow:0 22px 70px #4c263510;min-height:450px}
+.step-heading{margin-bottom:22px}
+.step-heading>span{font-size:9px;letter-spacing:.2em;color:#b16d83}
+.section-title{font:500 clamp(25px,4vw,32px)/1.2 Georgia,serif;color:#50313f;letter-spacing:-.02em}
+.step-heading .muted{font-size:12px;max-width:560px;line-height:1.65}
+.templates{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+.template{border:1px solid #eee1e5;border-radius:17px;background:#fff;padding:9px;text-align:left;box-shadow:0 5px 18px #4b26330a;transition:transform .2s,border-color .2s,box-shadow .2s}
+.template:hover{transform:translateY(-3px);box-shadow:0 12px 26px #4b26331a}
+.template.active{border:2px solid #b76c85;background:#fff8fa;padding:8px;box-shadow:0 8px 24px #b76c851c}
+.template-art{height:150px;border-radius:12px;margin:0 0 10px;display:flex;align-items:flex-end;justify-content:flex-start;padding:12px;gap:4px;overflow:hidden;isolation:isolate;background-size:cover;background-position:center}
+.template-art:before{inset:0;width:auto;height:auto;border:0;border-radius:0;opacity:1;background:linear-gradient(180deg,#100b1500 15%,#100b15c9 100%);z-index:-1}
+.template-art:after,.template-art .mini-preview,.template-art>i{display:none}
+.template-art>span{font-size:8px;letter-spacing:.17em;color:#fff;font-weight:800;text-shadow:0 1px 5px #0008}
+.template-art>strong{font-size:24px;line-height:1;color:#fff;text-shadow:0 2px 10px #0008}
+.template b{font-size:12px;color:#4b2e3b;margin:2px 2px 3px}
+.template small{display:block;font-size:10px;line-height:1.4;color:#8c7881;margin:0 2px 3px}
+.template-art.art-love{background-image:linear-gradient(180deg,#100b1500 15%,#100b15c9 100%),url('https://images.unsplash.com/photo-1756804437161-80a8a94bad58?fit=crop&w=500&q=80')}
+.template-art.art-birthday{background-image:radial-gradient(circle at 25% 25%,#fff6d866 0 5px,transparent 6px),radial-gradient(circle at 78% 22%,#fff6d866 0 4px,transparent 5px),linear-gradient(145deg,#c98755,#613a58)}
+.template-art.art-movie{background-image:linear-gradient(180deg,#100b1500 15%,#100b15d9 100%),url('https://images.unsplash.com/photo-1756804437161-80a8a94bad58?fit=crop&w=500&q=80')}
+.template-art.art-playlist{background-image:radial-gradient(circle at 50% 38%,#c5e5d4 0 35px,transparent 36px),linear-gradient(145deg,#467a65,#173d36)}
+.template-art.art-dating{background-image:linear-gradient(180deg,#100b1500 15%,#100b15bd 100%),url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?fit=crop&w=500&q=80')}
+.template-art.art-wedding{background-image:linear-gradient(180deg,#100b1500 15%,#100b15b0 100%),url('https://images.unsplash.com/photo-1529634597503-139d3726fed5?fit=crop&w=500&q=80')}
+.template-art.art-declaration{background-image:linear-gradient(180deg,#100b1500 15%,#100b15c9 100%),url('https://images.unsplash.com/photo-1756804437161-80a8a94bad58?fit=crop&w=500&q=80')}
+.template-art.art-invite{background-image:linear-gradient(180deg,#100b1500 15%,#100b15a8 100%),url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?fit=crop&w=500&q=80')}
+.demo-launch{margin:18px auto 10px}
+.demo-launch .btn{box-shadow:0 7px 18px #b76c8520}
+.field label{font-size:12px;color:#513542}
+.field input,.field textarea,.field select{border:1px solid #eadde2;border-radius:12px;padding:13px;background:#fff;color:#35252d}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#b76c85;box-shadow:0 0 0 3px #b76c8518}
+.photo-picker{background:#fff9fb;border:1px dashed #d9b5c2;border-radius:15px;padding:15px}
+.notice{border-radius:13px;padding:12px;line-height:1.6}
+.btn{background:#87475f;border-radius:12px;box-shadow:0 6px 15px #87475f20}
+.btn.alt{background:#f7eaf0;color:#6b3a50;box-shadow:none}
+.wizard-actions{border-color:#f0e4e8}
+.live-preview-wrap{border-color:#eee1e5;background:#fff9fb;border-radius:18px}
+.live-preview-heading b{font-size:12px;color:#654052}
+@media(max-width:760px){.templates{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.template-art{height:150px}}
+@media(max-width:520px){
+ .wrap{width:min(100% - 20px,600px);padding:20px 0 42px}
+ .brand{margin-bottom:20px}
+ .brand .ico{width:46px;height:46px;border-radius:15px}
+ .brand h1{font-size:31px}
+ .brand p{font-size:12px;margin:7px auto;max-width:300px}
+ .wizard-panel{padding:17px 14px;border-radius:20px;min-height:0}
+ .stepper{gap:5px;margin-bottom:13px}
+ .step-dot{gap:4px;font-size:9px}
+ .step-dot b{width:27px;height:27px}
+ .stepper>i{max-width:25px}
+ .template{padding:7px;border-radius:14px}
+ .template.active{padding:6px}
+ .template-art{height:130px;padding:9px;border-radius:10px}
+ .template b{font-size:11px}
+ .template small{font-size:9px}
+ .step-heading{margin-bottom:14px}
+ .step-heading .muted{font-size:11px}
+ .field input,.field textarea,.field select{padding:12px}
+ .wizard-actions{margin-top:18px;padding-top:13px}
+}
+
 </style>
 </head>
 <body>
