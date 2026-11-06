@@ -1,29 +1,42 @@
-# Surpresa em um Envelope 💌
+# Meu Presente 💝
 
-Aplicação estática, gratuita e sem cadastro, hospedada no GitHub Pages.
+Criador gratuito de páginas personalizadas com inspiração em produtos de presentes por QR Code.
 
-## Publicação
+## Repositório
+https://github.com/gabrieljunio-hash/surpresa-qr
 
-- URL: https://gabrieljunio-hash.github.io/surpresa/
-- Arquivo principal: `surpresa/index.html`
-- Não utiliza servidor, banco de dados ou login.
+## Modelos disponíveis
+- Nossa história: contador de relacionamento, mensagem e fotos.
+- Aniversário: cartão com título e mensagem.
+- Poster de filme: título, sinopse e fotos.
+- Playlist: fotos organizadas como faixas.
 
-## Como funciona
+## Recursos
+- QR Code para cada página.
+- Link compartilhável e compartilhamento nativo do celular.
+- Download do QR Code em PNG.
+- Temas de cores.
+- Melodia instrumental sintetizada no navegador.
+- Layout responsivo para celular e computador.
+- Sem cadastro, login, pagamento ou banco de dados.
 
-1. A pessoa preenche destinatário, remetente e mensagem.
-2. O navegador codifica os dados no fragmento (`#surpresa=...`) do próprio link.
-3. O QR Code aponta para esse link.
-4. Ao abrir, a página mostra o envelope; o toque abre a carta e inicia uma melodia sintetizada no navegador.
+## Publicação GitHub Pages
+Configurar em Settings → Pages → Deploy from a branch → main → /(root).
+URL esperada: https://gabrieljunio-hash.github.io/surpresa-qr/
 
-## Privacidade e limitações
+## Como os dados são compartilhados
+Os dados textuais são codificados no fragmento da URL (#presente=...). Não são enviados a um servidor. Qualquer pessoa com o link pode visualizar o presente.
 
-- Não há envio de mensagens para um banco de dados.
-- Quem tiver o link ou QR Code poderá ler a mensagem. Não use para dados confidenciais.
-- A mensagem é carregada a partir do próprio link; apagar o histórico do navegador não apaga cópias que já foram compartilhadas.
-- A geração do QR Code usa a biblioteca QRCode.js via CDN, portanto exige conexão com a internet.
-- A música é gerada localmente pela Web Audio API e depende de interação do usuário para começar.
-- O GitHub Pages hospeda apenas os arquivos estáticos. Não há painel para editar ou apagar links já distribuídos.
+As fotos precisam ser links públicos de imagens. Upload permanente de fotos e armazenamento de páginas exigem backend/armazenamento, não incluídos nesta versão. O campo de música é reservado para evolução; a melodia integrada funciona sem arquivos externos.
 
-## Testes de código
-
-A estrutura foi verificada no repositório: formulário, limite de mensagem, codificação/decodificação do link, QR Code, abertura por toque/teclado, controles de música e compartilhamento/download. A validação visual em aparelhos e a confirmação HTTP da publicação ainda precisam ser feitas.
+## Testes e limitações conhecidas
+- Validar mensagem obrigatória e data obrigatória para o modelo de relacionamento.
+- Codificação/decodificação JSON em UTF-8 via Base64 URL-safe.
+- Verificação de limite de texto (1.800 caracteres).
+- Gerar QR Code e baixar PNG.
+- Copiar link e compartilhar via Web Share API com fallback.
+- Renderizar os quatro modelos e aplicar tema escolhido.
+- Contador calculado a partir da data informada.
+- Carregar fotos por URLs públicas; imagens inválidas são removidas.
+- Melodia Web Audio iniciada por toque do usuário.
+- A validação automatizada em navegador real e a publicação HTTP ainda precisam ser confirmadas.
