@@ -257,7 +257,7 @@ function renderFieldPresets(){
    const b=el('button','preset-chip',key==='timeline'?'Exemplo '+(index+1):key==='tracks'?'Lista '+(index+1):'Sugestão '+(index+1));
    b.type='button';b.onclick=()=>{
     const target=$(key);if(!target)return;
-    target.value=value.replace(/\\n/g,'\\n');
+    target.value=value.replace(/\\n/g,'\n');
     target.dispatchEvent(new Event('input',{bubbles:true}));
     const guide=box.querySelector('span');const old=guide.textContent;guide.textContent='Sugestão aplicada — você pode editar o texto.';
     window.setTimeout(()=>{if(guide.isConnected)guide.textContent=old;},2200);
